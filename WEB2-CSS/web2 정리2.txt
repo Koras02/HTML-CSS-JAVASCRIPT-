@@ -1,0 +1,82 @@
+div 디자인 용도로만 
+
+span 인라인 엘리먼트 
+
+
+width:100px 100px 크기만큼 태그의 크기가 변경 
+
+
+margin:여백
+boder:테두리 
+padding 안쪽여백
+
+<div></div> 디자인 용도로만 쓰는태그 
+
+h1{
+    border-width;px;
+    border-width:red;
+    border-style;solid;
+화면전체를 씀
+
+a{
+   border-width;px;
+    border-width:red;
+    border-style;solid;
+자기 크기 만큼 씀
+
+ /*
+  block level element
+     */
+화면 전체
+
+/*
+inline elements
+   */ 자기 부피만큼 
+
+display;inline;/block;각각 속성을 다른속성에 적용 
+
+display:none 화면에 사라짐 
+
+h1, a { 중복제거 
+
+boder: 0 px solid red 단어 줄이기 
+
+padding:20px; 간격만들기
+
+margin:0; 간격 없어짐 
+
+width:100px 100px 크기만큼 태그의 크기가 변경 
+
+
+margin:여백
+boder:테두리 
+padding 안쪽여백
+
+<div></div> 디자인 용도로만 쓰는태그 
+
+div{
+     border:px solid black;
+} 부피감
+
+나란히 놓기위한 방법 
+
+navi artic 부모태그 만들기
+
+<div>
+    <div id="grid">아이디 값주고 
+      div navigation div
+      div article /div
+
+<Style> 밑에 
+
+#grid{ 
+border;5px solid 색상: 하면되 
++display;grid;
+grid-template-columns: 150px 1fr; 영역 자동으로커지게 
+fr 화면 전체를 자동으로 쓰게 조정되는 단위
+
+단어수에따라 자동으로 커짐 
+
+border:px solid gray; 테두리 
+
+

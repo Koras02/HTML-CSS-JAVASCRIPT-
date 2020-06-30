@@ -1,0 +1,27 @@
+HTML 과 JavaScript 차이 
+
+JavaScript 는 
+
+ <script>
+document.write(1+1); 이라고 치면 자동적으로 2가 나온다 
+
+어떤 글씨를 출력할때 document 
+
+지목하는것이 javascript 라는걸 웹브라우저에게 알려주기 위한것이 
+
+<script> 코드라고 한다 
+
+<input type="button" 을 치면 버튼 모양이 나오고 value="글자" 뒤에
+
+onclick="alert('hi')라고치면 hi라는 경고창이 뜸 
+
+
+<input type="button" value=day/night oneclick="
+document.querySelector('body').style backgroundColor='black';
+document.querySelector('body').style.color='white';
+"> 
+<input type="button" value="day" oneclick="
+     document.querySelector('body').style.backgroundColor='white';
+     document.querySelector('body').style.backgroundColor='black';
+">
+각각 day는 밝게 night 은 어둡게 하는 박스를 만들어준다 

@@ -1,0 +1,23 @@
+<a></a>링크
+
+info.cern.ch 웹의 시작점 
+
+github.com 웹사이트 무료제공 &저장용 
+
+http 다른 컴퓨터의 웹서버 &웹브라우저와 통신하기 위해 만듬 
+
+Apach (http;//projects.apache.org/projects/http_server.html) 좀오래걸림 
+
+Bitnami
+(https;//bitnami.com/stack/wamp)
+
+코딩의 기본 
+<!DOCTYPE html> 첫단추
+<html> 속성
+<head>머리
+                <meta charset="utf-8">저장매체
+</head>머리
+<body>몸
+
+</body>몸통
+</html>속성

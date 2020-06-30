@@ -1,0 +1,38 @@
+<font color="색">이름</font>=폰트삽입 코드
+
+<style> 전채폰트색 설정 
+ a {
+       color:색깔;
+   }
+
+<!--/--> 무시태그
+
+<style="color:색상"> 개별 색상 표시
+
+text-decoration: none; 밑줄 없애버리기
+
+text-decoration: underline; 개별 밑줄하고싶을때
+
+h1 ~4 {
+     font-size: 사이즈px; 폰트 크기 설정 
+     text-align: 위치; 폰트 위치 설정 
+
+class="saw" 같은 그룹으로 묶는 코드
+
+.saw saw 태그 가진 속성을 표시
+
+id="active> id선택자 +class선택자 붙으면 id선택자가 win
+
+class선택자 tag선택자 + class가 이김 
+
+id선택자의 값이 active태그 한번만 등장하면 그다음에 
+active 태그 쓰면 x 즉 id값은 단 1번만 등장해야됨 
+
+태그 선택자 id선택자 사이 class 선택자가 잇음 
+
+class 선택자는 tag보다 우선순위가 높지만 id보다는 낮다 
+
+
+
+
+

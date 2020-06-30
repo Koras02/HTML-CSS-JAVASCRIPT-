@@ -1,0 +1,35 @@
+본문은 <body>로 묵고 
+위는 <head>
+최상위<html>
+html 위<!Doctype html>
+예)
+<!DOCTYPE html>
+<html> 
+<head>
+                <meta charset="utf-8>
+</head>
+<body>
+</html>
+
+코드
+
+<target="_blank">새탭으로 열기
+<li><a href="주소">이름</a></li>링크로 이동 시키는 코드
+<a></a>링크 
+
+<input="checkbox">체크박스 삽입 
+
+<u></u>밑줄 
+<strong></strong>글씨를 진하게 표시
+<h1>~<h6>제목을 나타내는 용어 
+
+<img>이미지 태그
+
+<img src="사진이름"width<해상도>="100">
+
+<ul>순서없이 표시
+
+<ol>숫자를 자동으로 표기
+
+ul 과 ol의 차이는 ul 숫자x ol 숫자로 표시
+

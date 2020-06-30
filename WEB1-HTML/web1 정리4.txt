@@ -1,0 +1,27 @@
+동영상 넣기 
+<p>동영상 소스코드</p>
+
+이거아님 동영상 퍼가기 소스 복사 하고 붙여넣기하면됨 ...
+
+댓글 코드 넣기 
+
+disqus에서 소스복사
+
+라이브 채팅 채팅하고 
+
+tawk.to 에가서 ative chats -챗 오면 incomming 누르고
+
+whisper에서 채팅 ㄱㄱ 
+
+
+웹호스팅 추천사이트 
+
+https://www.bitballoon.com
+
+http://neocities.org
+
+Amazon S3
+
+Google Cloude Storage
+
+Azure Blob
