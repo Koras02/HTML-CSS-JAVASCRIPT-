@@ -1,0 +1,31 @@
+="black'; =;이퀄 대입연사자 이고 
+
+대입연산자의 의해서 black값이 backgroundcolor 값이 된것이다.
+
+<body style="background-color:black;color:white;">
+
+Web2 Javascript -9 기초 부터 보면된다..
+
+<h2 style="color:색상>글자</h2>하면 원하는 글자색으로 만들수있고
+
+<h2 style="background-color:색상;color;색상">을 바꿔주 면 글자의 배경색을 바꿀수있다.
+
+<div> 화면전체를 쓰며 줄바꿈이되는 <span> 줄바꿈이 x 
+
+font-weight: bold; 폰트의 굵기 를 정하는 코드 
+
+<span style="font -wight:bold;">java</span>
+
+.js{ 
+   font-weight : bold; js코드로 된 글자 전체 색을 바ㅜㄲ점
+여기에 color 추가하면 색바뀜 
+
+.js 클래스 선택자 # id 선택자 예외적으로 디자인 바꿀수 o
+
+span{ 모든 span 태그 
+
+document.querySelector('body').style.backgroungColor = 'black'; 배경 색을 어둡게해줌
+
+여기서 style.color="white;로 바꾸면 텍스트가 하얀색됨 
+
+
