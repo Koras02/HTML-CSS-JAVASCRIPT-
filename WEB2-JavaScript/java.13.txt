@@ -1,0 +1,42 @@
+<h2>Parameter & Argument</h2>
+<script>
+ document.write(1+1);
+</script>
+
+결과
+
+Parameter & Argument
+
+2
+
+Return
+
+
+
+<h2>parameter & Argument </h2>
+<script>
+ function onePlusone(){
+   document.write(1+1+'<br>');
+ }
+  onePlusone();
+  function sum(left, right){
+    document.write(left+right+'<br>');
+ }
+ onePlusone();
+ sum(2,3); //5 (결과)
+ sum(3,4); //7 (결과)
+ </script> 
+
+실행결과
+
+Parameter & Argument
+
+2
+5
+7
+
+sum함수에 (2.3(arugument))을 입력해줘서 5라는 값이 출력되고 
+
+(left, right(매개변수(parameter))
+
+ 

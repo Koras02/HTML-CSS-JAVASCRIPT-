@@ -1,0 +1,14 @@
+객체화 시키기 
+
+var Links& body = {
+   setColor:function (color){}
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+ 원본코드 삭제 
+
+
+34.파일로 쪼개서 정리하기 부터 보면됨 

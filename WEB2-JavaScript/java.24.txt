@@ -1,0 +1,23 @@
+UI vs API 
+
+UI(User Interface) vs API (Apprication Programing interface)
+
+웹페이지에있는 태그를 삭제하고 싶거나 자식태그를 포함하고싶다면 document 객체
+
+document 객체에서도 찾을수 없다면 DOM 객체
+
+웹브라우저 자체를 개발해야한다면 window 객체
+
+웹페이지를 리로드하지않고 변경하고 싶다면 ajax 
+
+리로드되어도 웹페이지를 유지하고싶다면 cookie
+
+인터넷이 끊겨도 동작하는 웹페이지를 만들고 싶다면 offline web application
+
+화상통신 웹앱을 만들고 싶다면 WebRTC
+
+사용자의 음성을 인식하고 음성으로 정보를 전달하고 싶다면 sppech
+
+3차원 그래픽 웹게임을 만들고싶다면 webGL
+
+가상현실 webVR

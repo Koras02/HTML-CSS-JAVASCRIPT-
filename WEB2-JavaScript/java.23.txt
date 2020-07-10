@@ -1,0 +1,7 @@
+라이브러리와 프레임워크 
+
+$('a')모든 a태그를 jquery 로 제어하겠다는 코드 
+
+$('body').css('color',color); 모든 body값을 css값으로 설정 
+
+$('body').css('backgroundColor',color); 이하동문 

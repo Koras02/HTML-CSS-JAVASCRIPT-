@@ -1,0 +1,71 @@
+   <script>
+  function nightDayHandler(self){
+   var target = document.querySelector('body');
+  if(self.value === 'night'){
+     target.style.backgroundColor = 'black';
+     target.style.color = 'powederblue';
+     self.value = 'day';
+
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = 'powderblue';
+      i = i + 1;
+    }
+  } else {
+     target.style.backgroundColor = 'white';
+     target.style.color = 'powderblue';
+     self.value = 'night';
+
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = 'powederblue';
+      i = i + 1;
+    }
+  }
+}
+   </script>
+ </head>
+ <body>
+   <link rel="stylesheet" href="style.css">
+   <script>
+    function nightDayHandler(self){
+    var target = document.querySelector('body');
+   if(self.value === 'night'){
+      target.style.backgroundColor = 'black';
+      target.style.color = 'powederblue';
+      self.value = 'day';
+
+     var alist = document.querySelectorAll('a');
+     var i = 0;
+     while(i < alist.length){
+       alist[i].style.color = 'powderblue';
+       i = i + 1;
+     }
+   } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'powderblue';
+      self.value = 'night';
+
+     var alist = document.querySelectorAll('a');
+     var i = 0;
+     while(i < alist.length){
+       alist[i].style.color = 'powederblue';
+       i = i + 1;
+     }
+   }
+ }
+   </script>
+</head>
+<body>
+    <h1><a href="javascript.html">WEB</a></h1>
+    <input id="night_day" type="button" value="night" onclick="
+      nightDayHandler(this);
+   ">
+   <input id ="night_day" type="button" value="day" onclick="
+      nightDayHandler(this);
+  ">
+ </body>
+
+night/day 박스 만들기 

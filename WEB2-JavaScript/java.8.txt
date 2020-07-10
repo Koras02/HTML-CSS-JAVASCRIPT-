@@ -1,0 +1,22 @@
+반복문 
+
+while(){ 반복문 키워드 가운데 괄호안에 true 넣으면 true인동안은 중괄호 안에 는  flase 될때까지 반복적으로 실행된다
+
+예)
+
+<script>
+ document.write('<li>1</li>');
+ var i =0; 이고
+ while i < 3 는 i 는 0이라서 3보다 작기 때문에 true 가되고 
+ document.write('<li>2</li>');
+ document.write('<li>3</li>'); 실행이 되고
+  i = i + 1;  i+1=1이되서 i는 1이되고
+
+다시 위에있던 while i<3{ 실행이 되고 i의 값은 1이고 i는 3보다 작아서 true가되서 
+밑에있는 코드가 실행이 되서 
+두줄의 코드가 나오고 
+
+i의값은 현재 1이고 1+1이되서 다시 while i < 3){ 코드가 실행이 되고 i값은 1이고 3보다 작기떄문에
+true가되면서 
+
+ } 

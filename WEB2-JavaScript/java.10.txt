@@ -1,0 +1,45 @@
+var alist = document.querySelector('a');
+console.log(alist.length);
+
+=이 콘솔안에 a 태그가 몇개인 지 알수있는 코드
+
+document.querySelector('a') 
+
+=이문서의 제목이 뭔지알수있는 코드 
+
+var alist = document.querySelectorAll('a');
+var i = 0;
+while(i < alist.length){
+        console.log(alist[i]);
+        i = i + 1;
+          }
+
+=모든 태그를 화면에 출력해주는 코드 
+
+var target = document.querySelectorAll('a');
+if(this.value === 'night'){
+   target.style.backgroundColor = 'black';
+   target.style.color = 'white';
+   this.value = 'day';                                                     
+
+var alist = document.querySelectorAll('a')
+var i = 0;
+while(i < alist.length){
+    alist[i].style.color = 'powderblue';
+    i = i + 1;
+ }
+야간에 색상 
+} else {
+   target.style.backgroundColor = 'white';
+   target.style.color = '색상';
+   this.value = 'night';
+  
+   var alist = document.querySelectorAll('a');
+   var i = 0; 
+   while(i < alist.length){
+      alist[i].style.color = 'blue';
+      i = i + 1;
+   }
+  }
+ 주간에 색상 
+ ">

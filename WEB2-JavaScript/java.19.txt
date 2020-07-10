@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meat charset="utf-8">
+ </head>
+ <body>
+   <h1>Objects</h1>
+   <h2>Create</h2>
+   <script>
+    var coworkers = {
+      "programmer":"egoing",
+      "designer":"leezche"
+    };
+    document.write("programmer: "+coworkers.programmer+"<br>");
+    document.write("designer: "+coworkers.designer+"<br>");
+    coworkers.bookkeeper = "duru";
+    document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+    coworkers["data scientist"] = "taeho";
+    document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+        for (var key in coworkers) {
+            document.write(key+' : '+coworkers[key]+'<br>');
+        }
+       </script>
+  </body>
+  </html>
+
+coworkers 객체에있는 데이터의 수만큼 중괄호의 코드들이 실행이 되는데 실행될때마다 키 값 하나하나 변수값으로 바꿔준다
+coworkers 객체에 [key]하면 첫번쨰 순환때는 coworkers 대괄호 key 값으로 programmer 들어오고  2번쨰는 disigner 세번쨰는 leezche
+등등 그순서는 다를수있음.추가로 coworkers 앞에 key+ ' : '+ 하면 위에있는 것과 똑같은 결과를 얻고 모든 데이터를 순환하면서 
+우리에게 필요한 데이터가 있는지 없는지 확인 가능 

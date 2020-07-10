@@ -1,0 +1,45 @@
+객체 쓰기와 읽기 
+
+var cowrkers = ['egoing', 'leezche'];
+
+coworkers[0]
+
+'egoing'
+
+coworkers[1]
+
+"leezche"    순서대로 입력됨
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+ </head>
+ <body>
+     <h1>Objects</h1>
+     <h2>Create</h2>
+     <script>
+      var  cowrkers = {
+       "programmer":"egoing",
+       "designer":"leezche"
+      };
+     document.write("programmer: "+coworkers.programmer+"<br>");
+     document.write("designer: "+coworkers.designer+"<br>");
+     coworkers.bookkeeper = "duru";
+     document.write("bookkeper : "+coworkers.bookkeeper+"<br>");
+     coworkers["data scientist"] = "taeho";
+     document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+  </body>
+  </html>
+
+실행결과 
+
+Objects
+
+Create 
+
+programmer: egoing
+designer : leezche
+bookkeeper : duru
+data scientist : taeho

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+  </head>
+  <body>
+      <h1>Loop & Array</h1>
+      <script>
+         var coworkers = ['egoing','leezche','daru','taeho'];
+      </script>
+      <h2>Co workers</h2>
+      <ul>
+        <script>
+          var i = 0;
+          while(i < 4){
+            document.write('<li>'+coworkers[i]+'</li>');
+            i = i + 1;
+          }
+        </script>
+
+         </ul>
+       </body>
+       </html>
+
+4개의 문장이 추가됨 
+
+여기서 추가하고 싶으면 while 에 (i <5)로바꾸고 문장을 추가 해주면 됨  
+
+굳이 추가할 필요없이 while(i < coworkers.length){로바꿔주면 숫자 상관없이 문장을 추가할수있다.
+
+document.write('<li><a href-"주소"+coworkers[i]+'">'+coworkers[i]'</a></li>'); 추가하면 각각의 링크가 추가되고 
+
+사이트를 통일해서 링크가 생성된다.
+
+23.배열과 반복문 부터 ~~
+

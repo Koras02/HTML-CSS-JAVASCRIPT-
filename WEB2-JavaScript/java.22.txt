@@ -1,0 +1,38 @@
+파일로 쪼개서 정리 정돈하기 
+
+ 
+   var Links = {
+     setColor:function (color){
+         var alist = document.querySelectorAll('a');
+         var i = 0;
+         while(i < alist.length){
+           alist[i].style.color = 'blue';
+           i = i + 1;
+         }
+   }
+    var Body = {
+       setColor:function (color){
+       document.querySelector('body').target.style.color = color;
+     },
+     SetBackgrounColor:function (color){
+      document.querySelector('body').target.style.backgroundcolor = color;
+    }
+  function BodySetBackgroundColor(color){
+     document.querySelector('body').style.backgroundColor = clolor
+  }
+   function nightDayHandler(self){
+    var target = document.querySelector('body');
+   if(self.value === 'night'){
+      Body.setBackgrounColor('black');
+      Body.setColor('white');
+      self.value = 'day';
+
+     Links.setColor('powederblue');
+   } else {
+      Body.setBackgrounColor('white');
+      Body.setColor('black');
+      self.value = 'night';
+
+      Links setColor('blue');
+ }
+    이부분을 복사후 colors.js파일 생성 붙여넣기 하고 script src="colors.js">

@@ -1,0 +1,40 @@
+   <script>
+  function setColor(color){
+  var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = 'powederblue'; = color;로 교체 
+      i = i + 1;
+    }
+  }
+ 붙여넣기 
+  function nightDayHandler(self){
+   var target = document.querySelector('body');
+  if(self.value === 'night'){
+     target.style.backgroundColor = 'black';
+     target.style.color = 'powederblue';
+     self.value = 'day';
+
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){                                   =지우고 setColor('powderblue')교체
+      alist[i].style.color = 'powderblue';
+      i = i + 1;
+    }
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = 'powederblue';                   =지우고 setColor(powder
+      i = i + 1;
+    }
+  }
+}
+
+ } else {
+     target.style.backgroundColor = 'white';
+     target.style.color = 'powderblue';
+     self.value = 'night'
+   
+   setColor('powderblue')->blue 로교체 
+
+중복되는 코드 삭제 

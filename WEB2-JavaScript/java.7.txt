@@ -1,0 +1,42 @@
+배열
+
+<!doctype html>
+<html>
+   <head>
+          <meta charset="utf-8">
+   </head>
+   <body>
+      <h1>Array</h1>
+      <h2>Syntax</h2>
+      <script>
+           var coworkers = ["egoing", "leezche"]; index 0 번은 egoing 
+      </script>
+        <h2> get </h2>
+      <script>
+           document.write(coworkers[0]);
+ </html>
+
+   <h2>count</h2> 
+        <script>
+         document.write(coworkers.length);
+        </script>
+
+  =2 가가된다                                                     
+
+index를 정할떄 0을 첫번째 1을 두번째 가된다
+
+개수은 1부터 세기떄문에 값이 두개라면 length 의 값은 2가된다.
+
+추가로 
+
+중간에 
+
+<h2> add </h2>
+<script>
+    coworkes.push('duru');
+    coworkes.push('taeho');
+</script>
+
+를 추가하면 
+
+두사람은 추가해서 4가된다.

@@ -1,0 +1,17 @@
+    <input id="night_day" type="button" value="night" onclick="
+      if(document.querySelector('#night_day').value === 'night'){
+        document.querySelector('body').style.backgroundColor = 'black';
+        document.querySelector('body').style.color = 'white';
+        document.querySelector('#night_day').value = 'day';
+      } else {
+        document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+        document.querySelector('#night_day').value = 'night';
+      }
+     ">
+
+이코드를 삽입하면 night를 눌렀을때 검은색화면이랑 day가뜨고
+
+day를 눌렀을때 흰색 배경이되고 night 가 뜬다 
+
+이코드를 넣으면 night day나누지않고 하나의 코드가 된다. 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meat charset="utf-8">
+ </head>
+ <body>
+   <h1>Objects</h1>
+   <h2>Create</h2>
+   <script>
+    var coworkers = {
+      "programmer":"egoing",
+      "designer":"leezche"
+    };
+    document.write("programmer: "+coworkers.programmer+"<br>");
+    document.write("designer: "+coworkers.designer+"<br>");
+    coworkers.bookkeeper = "duru";
+    document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+    coworkers["data scientist"] = "taeho";
+    document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+     <h2>Iterate</h2>
+     <script>
+        for(var key in coworkers) {
+           document.write(key+' : '+coworkers[key]+'<br>');
+        }
+       </script>
+        <h2>Property & Method</h2>
+              coworkers.showAll = function(){ 소속된 변수의 값으로 함수를 지정할수있고 객체의 소속된 함수를 만들수있따
+          for(var key in this) {
+         document.write(key+' : '+this[key]+'<br>'); 객체의 소속된 함수를 Method 객체의 소속된 변수를 Property라고 한다 
+          }
+        }
+        coworkers.showAll();
+        </script>
+      </body>
+     </html>
+  </body>
+  </html>
+실행결과 
+
+programmer : egoing
+designer : leezche
+bookkeeper : duru
+data scientist : taeho
+showAll : function(){ for(var key in this) { document.write(key+' : '+this[key]+'
+'); } }
+
