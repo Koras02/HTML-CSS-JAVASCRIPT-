@@ -1,28 +1,78 @@
 <!doctype html>
 <html>
 <head>
-   <title>Web-1 -html</title>
-   <meta charset='uef-8'
+   <title>WEB1 - Welcome</title>
+   <meta charset="utf-8">
 </head>
 <body>
-    <h1><a href="web.html">WEB</a></h1>
+  <script>
+  var Links = {
+    setColor:function (color){}
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = 'blue';
+          i = i + 1;
+        }
+  }
+   var Body = {
+      setColor:function (color){
+      document.querySelector('body').target.style.color = color;
+    },
+    SetBackgrounColor:function (color){
+     document.querySelector('body').target.style.backgroundcolor = color;
+   }
+  }
+  function nightDayHandler(self){
+   var target = document.querySelector('body');
+  if(self.value === 'night'){
+     Body.setBackgrounColor('black');
+     Body.setColor('white');
+     self.value = 'day';
+
+    Links.setColor('powederblue');
+  } else {
+     Body.setBackgrounColor('white');
+     Body.setColor('black');
+     self.value = 'night';
+
+     LinkssetColor('blue');
+  }
+  </script>
+  </head>
+  <body>
+  <h1><a href="web.html">WEB</a></h1>
+  <input id="night_day" value="night" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+   ">
+  <input id="night_day" type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+   ">
   <ol>
-    <li><a href="1.html">HTML</a></li>
+    <li><a href="1.html">HTMLSS</a></li>
     <li><a href="2.html">CSS</a></li>
     <li><a href="3.html">JavaScript</a></li>
   </ol>
-  <h2>HTML</h2>
-  <p>
-    Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript and VBScript.
 
-   Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
+  </ol>
+  <h2>WEB</h2>
+  <p>The World Wide Web (WWW), commonly known as the Web, is an information system where documents and other web resources are identified by Uniform Resource Locators (URLs, such as https://www.example.com/), which may be interlinked by hypertext, and are accessible over the Internet.[1][2] The resources of the WWW are transferred via the Hypertext Transfer Protocol (HTTP) and may be accessed by users by a software application called a web browser and are published by a software application called a web server.
 
-   HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as <img /> and <input /> directly introduce content into the page. Other tags such as <p> surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags, but use them to interpret the content of the page.
+English engineer and computer scientist Sir Timothy John Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser in 1990 while employed at CERN near Geneva, Switzerland.[3][4] The browser was released outside CERN in 1991, first to other research institutions starting in January 1991 and then to the general public in August 1991. The World Wide Web has been central to the development of the Information Age and is the primary tool billions of people use to interact on the Internet.[5][6][7][8][9]
 
-   HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997.[2]
-    </p>
+Web resources may be any type of downloaded media, but web pages are hypertext media that have been formatted in Hypertext Markup Language (HTML).[10] Such formatting allows for embedded hyperlinks that contain URLs and permit users to navigate to other web resources. In addition to text, web pages may contain references to images, video, audio, and software components which are displayed in the user's web browser as coherent pages of multimedia content.
+
+Multiple web resources with a common theme, a common domain name, or both, make up a website. Websites are stored in computers that are running a program called a web server that responds to requests made over the Internet from web browsers running on a user's computer. Website content can be largely provided by a publisher, or interactively where users contribute content or the content depends upon the users or their actions. Websites may be provided for a myriad of informative, entertainment, commercial, governmental, or non-governmental reasons.</P>
+  <li><a href="https://www.youtube.com/watch?v=HNRnfPcBa7k ="target_blank"> 김두한 </li>
+  <li><a href="https://www.youtube.com/watch?v=DGANAv-1uzw&list=PL0xUST_Dm4hRISwe3iUkzekq8TeQHKbxl&index=2 ="target_blank"> 이뭔 개소리야 </li>
   </ol>
 <img src="누나.jpg" width="60%">
 <img src="강아지.jpg" width="50%">
 <img src="Tokyo.jpg" width="50%">
 <a href="https://www.w3.org/TR/2011/WD-html5-20110405/" target="_blank" title="html5 specification">키모찌</a>
+<p>The World Wide Web (WWW), commonly known as the Web, is an information system where documents and other web resources are identified by Uniform Resource Locators (URLs, such as https://www.example.com/), which may be interlinked by hypertext, and are accessible over the Internet.[1][2] The resources of the WWW are transferred via the Hypertext Transfer Protocol (HTTP) and may be accessed by users by a software application called a web browser and are published by a software application called a web server.
+
+English engineer and computer scientist Sir Timothy John Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser in 1990 while employed at CERN near Geneva, Switzerland.[3][4] The browser was released outside CERN in 1991, first to other research institutions starting in January 1991 and then to the general public in August 1991. The World Wide Web has been central to the development of the Information Age and is the primary tool billions of people use to interact on the Internet.[5][6][7][8][9] </p>
+</body>
