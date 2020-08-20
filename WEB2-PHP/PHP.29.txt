@@ -1,0 +1,49 @@
+글삭제 구현하기 
+
+a heaf udate.. 밑에 
+
+<a href="update.php?id=<?=$_GET['id']?>">delete</a> 생성 
+
+삭제는 수정이나 추가나 다르게 form 거치지않아도 됨 그래서 
+
+<a href="delete_process.php?id=<?=$_GET['id']?>delete</a> 수정하고 파일을 하나생성 
+
+그후 
+
+<?php
+unlink('data/' .$_GET['id']);
+header('Location: /index.php')
+?> 
+
+라고 치면 delete 라는 박스가 생성되고 삭제 가 구현된다. 
+
+그런데  PHP를 삭제할떄 delete 라는 박스가 생성됬는데 delete는 데이터를 삭제하는 건데 
+
+데이터를 삭제할때 링크를 클릭하자 마자 데이터를 삭제해버리면 
+
+예를 들어서 여기있는 주소를 카피해서 친구에게 주면 친구가 그링크를 클릭 하면서 데이터가 
+
+삭제되기 떄문이다. 
+
+이걸 방지하기 위해서 딜리트를 눌렀을때 삭제방식이 아니라 링크방식이 아니라 포스트 방식
+
+그래서 a href delete_process.php 밑에 
+
+a href ="dlete_process.php 이부분을 지우고 
+      <from action="delete_process.php" method="post">
+        <input type="hidden" name="id" value="<?=$_GET['id']?>">
+        <input type="submit" value="delete">
+을 추가하면된다.
+
+최종 	
+
+<a href="create.php">create</a>
+<?php if(isset($_GET['id'])) { ?>
+<a href="update.php?id=<?=$_GET['id']?>">update</a>
+<from action="delete_process.php" method="post">  
+  <input type="hidden" name="id" value="<?=$_GET['id']?>">
+  <input type="submit" value="delete">
+</form>
+
+으로 하면 create update delete 박스가 구현된다..
+

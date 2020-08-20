@@ -1,0 +1,56 @@
+23.글생성 
+
+부분에 링크 
+
+<a href="creat.php">create</a> 링크만들고 index.php 복제 하고 create.php 로 이름설정 
+
+하고 해당 <php print_title ~ print description () 지우고 
+
+<form action="누구에게 전송하는가 주소" method="post"> 
+
+<p>
+<input type="text" name="title" placeholder="Title">
+</p>
+하면 박스가생기고 그밑에
+<p>
+    <textarea name="description"
+    placeholder="Description"></textarea>
+</p>
+하면 title 밑에 네모난 내용을 입력하느 상자가 생기고 
+<p>
+<input type="submit">
+</p> 
+
+하면 최종적으로 
+
+제목
+
+내용 
+
+제출 순으로 박스가 생긴다 
+
+그리고 PHP 5 
+PHP is ... 하고 제출을 누르면 에러가나는데 
+
+다시 htdocs 에 create_process.php 파일 만들고 
+
+<?php
+file_put_contents('data/'.$_POST['title'], $_POST['description']);
+?>
+ 하고 리로드하면 php5가 생김 
+
+이렇게 서브밋할때 빈화면인데 저장됬음을 알리기 위해서 는 리다이렉션이라는 기능이있는데 
+서브밋해서 왔을때 사용자를 다른 페이지로 보내버릴수있다 그것을 리다이렉션 이라불름 
+
+그러기위해 
+
+header('Location: /index.php?id='.$POST['title']); 이렇게 해주면 현재 위치하고있는 같은 주소의 
+
+index.php?id는 title 에 해당된 파일로 돌릴수있음 
+
+페이지를 확인할수있는  화면으로 오게된다 
+
+
+ </p>
+
+

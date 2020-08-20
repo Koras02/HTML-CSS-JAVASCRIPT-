@@ -1,0 +1,27 @@
+18-함수 만들기 예고 
+
+함수라는것을 직접만들면 이름을 부여해서 어떤기능인지 부여 가능 
+
+?php 부분을 지우고 title 태그사이에 <?php print_title(); ?>
+
+function basic(){
+            print("Lorem ipsum dolor1");
+            print("Lorem ipsum dolor2");
+          }
+
+          basic();
+        ?>
+
+php 베이직이라는 함수를 basic 이라고 하고 끝나지않고 ()이나오면 php 저것은 함수를 실행시키려하구나라고 생각하고
+자기가 기억한 basic();함수의 실행
+
+<?php
+    function basic(){
+      print("Lorem ipsum dolor1<br>");
+      print("Lorem ipsum dolor2<br>");
+   } 
+    
+   basic();
+   basic(); 
+ 
+2번 호출 한다  basic 수만큼 다라짐

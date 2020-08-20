@@ -1,0 +1,164 @@
+효율적으로 개선하기 
+
+리팩토링 
+
+중복을 제거하기 
+
+재사용하기 좋도록 정리정돈한것을 도서관 
+
+lib이라는 폴더를 생성하고 그폴더에 print.php라는 파일을 생성후
+
+<!DOCTYPE html>에있는 <?php 문장을 print.php에 붙여넣기 
+<?php
+function print_title(){
+  if(isset($_GET['id'])){
+    echo $_GET['id'];
+  } else {
+    echo "Welcome";
+  }
+}
+function print_description(){
+   if(isset($_GET['id'])){
+     echo file_get_contents("data/".$_GET['id']);
+   } else {
+     echo "Hello. PHP";
+   }
+}
+function print_list(){
+  $list = scandir('./data');
+  $i = 0;
+  while($i < count($list)){
+    if($list[$i] !== '.') {
+      if($list[$i] !== '..') {
+    echo "<li><a
+    href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+     }
+    }
+    $i = $i +1;
+    }
+  }
+?> 이거 복사 하고 붙여넣기하고 
+
+그러면 동작을 안하는데 어떻게해야되는가 여기에 있는 printer enter가 원래있던거 처럼 php한테 
+
+동작시키면되는데 
+
+<?php
+require('lib/print.php'); 
+?>
+하고 리로드하면 다시동작하는데 
+
+그리고 여기를 이제는 3줄을 여기서 끝네는것이ㄴ아닌 create.php 에도 붙여넣기하고 update.php에도
+
+붙여넣으면 이제 index create update.php 모두 print.php 에 있는것을 가져다 쓰기떄문에 welcom이라는 부분을 
+
+바꾼다거나 수정하는것에서 모든 웨벺이지가 동시에 바뀌는 효과를 볼수있다.
+
+중복을 끝가지 추적한다 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    <?php
+      print_title();
+      ?>
+    </title>
+  </head>
+  <body>
+      <h1><a href="index.php">WEB</a></h1>
+      <ol>
+        <?php
+        print_list();
+        ?>
+      </ol>
+
+index.php와 upate.php 의 중복점인데 라이브러리화 시키면되는데 
+
+view라는 폴더를 생성하고 그하위파일에 bottom.php 생성후 
+
+  </body>
+         </html> 을 컷 해서 bottom.php에 붙여넣기 
+
+그리고 지운부분에
+
+<?php
+requir('view/bottom.php')하고 에러안나면 성공!
+?>
+
+그리고 create update .php 에도 붙여넣기 하기 
+
+이렇게 해놓으면 문장을 추가할수있고 모든페이지를 bottom.php에서 통합적으로 관리할수있다는 장점이 생긴다.
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+    <?php
+      print_title();
+      ?>
+    </title>
+  </head>
+  <body>
+      <h1><a href="index.php">WEB</a></h1>
+      <ol>
+        <?php
+        print_list();
+        ?>
+      </ol>이부분도 카피 해서 top.php만들고 여기다 붙혀넣기 -> <?php 화 
+
+<?php
+require('lib/print.php');
+require('view/top.php);
+?>
+하면된다.
+
+다른 php에도 붙여넣기 하면된다.. 
+
+prin_title 있는데 이곳은
+
+require 안에서 왔찌만 
+그러나 top.php에있는 print_tilte에서 호출하고있음에도 어디서온지 모르는데 
+
+top.php에서도 
+<?php
+require('lib/print.php');
+?> 추가하면된다.
+
+근데이렇게하면 print tile이라는 함수가 중복되서 선언되는데 
+
+연웹 애플리케이션이 index.php 인데 그리고 index.php는 require라고하는걸통해 print.php를 가져오고있다.
+
+그럼 print.php이부분이 실행될떄 print.php 첫부분이 실행되는데 그러면 print tite이라고 하는 함수가 이제
+
+우리에 애플에서 정의가된것 그리고 여기 index.php에 top.php 가 리콰이어 됬는데 
+
+여기에서 첫부분인 print.php 가 실행이 될퇸데 이코드가 또 실행되서 require('lib/print.php');이부분이 또 실행되는데 
+
+이코드가  이코드는 print.php인데 <?php
+function print_title(){
+  if(isset($_GET['id'])){
+    echo $_GET['id'];
+  } else {
+    echo "Welcome";
+  }
+}
+이그러 이 print_title 또하번 실행이되는것 php에서는 한번만들어진 함수는 다시 재정의 할수없도록 되있음 
+
+그래서 에러가남!! 구래서 이런걸방지하기위해서
+
+index 첫 require 에 require_once 로 바꾸고 top.php에있는 곳도 require_once로바꾸면된다.
+
+그러면어떻게되냐 
+
+index.php에 리콰이어가 처음 실행이되면  lib밑에 print.php로드 그런데 top이실행되면서 
+
+top.php 에 또하번 require_once가 실해이 될려고 하면 php가 이미한번 require  햇끼떄메 top.php 
+
+에있는 리카이어를 무시한다. 그러면 중복해서 print.php가 호출되는것을 방지하기 떄문에 
+
+페이지에서 
+리로드 하면 에러가 발생하지않는 것이다. 가급적이면 require_once 를 쓰는것이 정신건강에 좋다!!

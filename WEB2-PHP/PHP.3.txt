@@ -1,0 +1,16 @@
+
+
+Web browse -> index.html 을 web server 보내면 서버컴퓨터의 하드디스크나 ssd 딥에서 설치되었는 ht docts 라는디레토리에 있는 
+
+index.html 파일을 읽어서 바로 web browser 에게 전송하면 web browser가 코드를 해석해서 보여줌 
+
+index.php로 바꿔서 보내면  web server는 확장자가 php인 파일은 자기소관이 아닌 걸 알게됨 
+
+그래서 web server php 인 파일이 자기소관이 아닌 걸 알게되서 파일에대한 처리를  php에보냄 
+
+php란 파일이 ht docs 라는 디렉토리안에 있는 index.php 파일을 열어서  거기에 적혀있는 php라는 컴퓨터 언어에 문법에 따라 해석해
+
+최종적으로 html 파일을 찍어냄.그렇게 만들어진 html을 웹서버가 웹브라우저에게 전송하면서 이과정이 끝
+
+
+

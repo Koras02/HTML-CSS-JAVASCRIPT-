@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+ </head>    
+ <body>
+안녕하세요. <?php echo $_GET['name']; ?>님
+ </body>
+</html>
+
+
+url에 따라서 parmeter 이라는 애플리케이션은 echo 라는 출력값에 의해서 결과를 달리하면서 출력할수 있게된다.
+
+<?php echo $_GET['이름']; ?> 주소창에 입력값에 따라 글자가 달라진다.
+
+WEB2-PHP-7.2.URL 파라미터의 활용부터 

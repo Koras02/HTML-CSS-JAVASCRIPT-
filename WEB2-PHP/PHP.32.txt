@@ -1,0 +1,68 @@
+27.2 url을 이용해 공격하기 
+
+만약의 passward.txt를 만들고 거기다 비밀번호를 적고 리로드 하면 읽을수있는데 주소의 id값뒤부분에다
+
+passward.txt라고 하면 error 뜨는데 data란 디렉토리에 없어서 에러가 걸린다 .
+
+그런데 공격자가 여러가지 정황들을 판단해서 데이터라는 디렉토리 바깥쪽에 패스워드.txt라는 파일이
+
+있다는걸알아내면 주소에다 현재 디렉토리의 부모 디렉토리를 의미하는 약속인 ../를 붙히면된다
+
+예) 127.0.0.1/index.php?id=../passward.txt 그리고 엔터를 치면 
+
+경로가 
+
+./passward.txt
+
+data/../passward.txtegoing /1234567 
+
+이렇게되는데 즉 데이터 디렉토리에 부모디렉토리 밑에있는 passward.txt 를 file_get_contents로 읽으니까 
+
+이렇게 비밀번호를 갖다 바치는 결과를 나타냄 
+
+그럼 어떻게 보호해야되나 
+
+php명령 중에 basename 이라는 함수가 있는데 파일에 경로에서 파일명만 추출하는 함수 
+
+ 
+ echo $_GET['id'];  //echo 부분을 화면에 출력하고
+     echo "<br>"; //<br>로 줄바꿈 
+     echo basename("data/".$_GET['id']);
+     echo "<br>";
+     echo htmlspecialchars(file_get_contents("data/".$_GET['id']));
+
+실행결과 
+
+.../passward.txt
+
+.../passward.txt .../paswaard 가 들어왔는데 그거에대한 base name 을하면 ...앞이 처짐 파일명만 나옴  그렇게되면 basename 통해 부모 디렉토리나 나쁜짓을 못하게 할수있따.!
+passward.txt
+egoing /1234567
+
+그리고 
+echo 첫부분ㅂ ㅜ터 마지막 br까지 지우고 
+
+if(isset($_GET['id'])){
+   $basename = basename($_GET['id']);
+   echo htmlspecialchars(file_get_contents("data/".$basename));
+} else {
+echo "Hello, PHP";
+}
+} 이렇게하면 부모디렉토리로 못가게 막음  에러가 뜨면 잘된거 
+
+
+또 다른것 만약에 삭제할떄 일반인들을 그냥 삭제하지만 나쁜의도를 생가하는사람은다르다 
+
+만약에 개발자 도구를 열고 fpreserver log 로그보존 누르고 네트워크를 보면 어떤 방식으로 주고받는지알수있다 
+
+gerenel 항목에 메서드가 post방식으로 되있다는걸 안 공격자는 post방식으로 하는구나 하고 form data로
+
+id 값을 전달하고있구나 라는걸 알고 공격자는 post방식으로 delete_process.php 로 id값을 예를들면 
+
+../그리고 우리의 애플리케이션 파일인 index.php 라고 전송을 하면 삭제가 된다
+
+이걸방지하기위해서 삭제대상을 데이터디렉토리로 닫어나야되는데 
+
+delete_process.php 에 data 부분 오른쪾에.basename($_POST['id'])); 이라고 해서 여기 id값이 파일명만들어갈수있도록
+
+나머지 부분을 쳐내는것 그러면 좀더 안전해질것이다.

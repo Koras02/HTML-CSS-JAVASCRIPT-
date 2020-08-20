@@ -1,0 +1,22 @@
+<?php
+phpinfo();
+?>
+
+php.ini php 설정파일 
+
+display_errors = Off -> On  ;에러를 화면에 표시하는 것이 off 되어있다 -> on 으로변경 
+
+실제로 서비스할때 off 로 변경 해야된다. 
+
+opcache.enable=1   
+
+opcache.enable= php 가 같은 시간동안 더많은 웹페이지를 만들수 있음.그러나 켜저있으면 php파일을 수정할때 바로 수정하지않고 1분정도 시간이 걸림 
+
+그래서 개발할때는 0으로 해놓는거 추천 
+
+php 아파치에 기생함 그래서 아파치를 껏다키면 아파치가 껏다 켜질때 php환경설정이 반영됨 
+
+configure -> open access log 접속기록 찾을때 
+
+Open Error Log 
+

@@ -1,0 +1,114 @@
+CRUD (CREAT) 기능 From과 POST
+
+사용자의 서버를 전송하기위한 form
+
+사용자로부터 정보를 입력받는 태그 
+
+<input type ="text"> 라고 하면 사용자로부터 텍스트 정보를 입력받을 수있는 네모난 상자가 나옴 
+text 뒤에 placeholder="title" 이라고하면 박스에 title 이라고 생김 이박스에 제목을 입력하세요라고 표현가능 
+
+정보를 입력하고 전송하고싶다면 <input type="submit"> 전송박스 생김 전송눌를떄 반응하고싶다
+
+그럼 input 위에 <form action="form.php"> 라고 입력 리로드하고 입력하기전에 
+
+서버에다가 입력한정보를 tilte 이라는 이름으로 전송하려면 text 중간 이곳에 name ="title" 이곳에입력 placeholder=title
+
+하고 sumit 하면 form.php 주소가 생기고 form.php 파일생성하면 
+
+<?php
+$_GET['title'] 
+?>  하면 
+
+제출눌르고 나오는 php라는 문장이 나온다 
+
+이다음 좀더많은 텍스트를 적기위해 
+
+중간에 <textarea></textarea>를 추가하면 여러줄을 입력할수있는 텍스트입력폼이 나옴 
+
+각각의 행들을 줄바꿈 하기위해  
+
+그러면 박스가 생긴다 
+
+그리고 
+
+<?php
+echo "<p>title : ".$_GET['title']."</p>";
+echo "<p>description : ".$_GET['description'.]."</p>";
+?>
+
+실행결과 
+
+PHP                   title : PHP  
+  
+PHP is.... 제출 ->   description : PHP is...  
+
+form 태그는 form태그안에있는 input과 관련된 
+
+사용자의 정보를 담는 각각의 ui 에 사용자가 어떤값을 입력할때 
+
+입력한 각각의 값에 name 속성값을 이름으로 해서 submit 버튼을 누르면 submit 에 속성된 form
+
+태그의 action 속성이 가리키는 url로 웹브라우저로 url을 샥바꾸면서 url 그뒤에다가 title =php 
+
+description = php is... 이라는 url을 웹브라우저가 만들어서 글로 확가버리는 거라는것
+
+이맥락에서 form 태그는 사용자가 입력한 정보를 url 파라미터로 만들어내는 기계 라고 줄여서 말할수있다.
+
+이를 예를 들어 
+
+form.php 문서에 
+
+echo위에 file_put_contents('data/'._$GET['title'], $_GET['description']); 이라는 인자를 주면 
+
+사용자가 이주소로 들어왔을 떄 php data 디렉토리에 data 디렉토리에 php 라는 파일을 생성 
+
+url을 통해 데이터를 전송하는 방식은  사용자가 서버로 뎅터를 보낼떄 지울떄는 쓰면x
+
+대신에 이 페이지로 오게하고싶다면 url 파라미터를 통해서 서버쪽에 대이터를 전송하는것은 
+
+북마크에서 사용하기 적합한방식 즉어떤 컨텐츠를 다른사람에게 공유할때 쓰는 방식 이다.
+
+url을 통하지않고 은밀하게 서버를 전송하기위해서는 
+
+<form action="fom.php" 뒤에 method="post">
+
+하고 
+
+PHP3
+
+PHP3... 하고 입력 하면 
+
+주소는 바뀌지않지만 검사창열고 네트워크 창에 form.php누르고 form data 항목에 을 보면 
+
+php 
+
+php is ... 으로 되있다.
+
+즉 form.php 로 title description을 은밀히 전송한것이다. 
+
+하지만 url을 통하지않는다. 
+
+오류가나는 이유는 form.php 전송하고 있는 것이 $_GET으로 되있고 
+
+현제 html에서 전송하는것과 다르기 떄문 그러면 데이터를 받는 쪽에서는 $_GET 이아니라 post로 밭아야됨.
+
+post방식으로 전송한 데이터는 $_POST 로 약속된 변수이름을 통해서 전송 
+
+그결과 php3라는 파일이 추가가 됐고 데이터가 추가된것을 볼수있다 
+
+$_POST 타이틀과 $_POST 디스크 픽션을 사용했기 때문에 사용자가 form.html 이 form.php로 
+
+전송한 타이틀과 디스크립션 정보를 사용할수있게됨 그결과로 php.4 라고 하는 것이 생성됨 
+
+추가로 
+method를 쓰지않는다면 get을 쓰는 것과 같음 메소드를 설정하지않는다면 get을 쓰는것과 같음 
+
+서버로 데이터를 전송할때 get 방식 메소드 를 생략하거나 메소드 값을 get 을주면됨 
+
+그럼 url 파라미터를 통해 데이터 가전송됨 그러나 북마크용도로 적당.... 
+
+사용자 전송한 데이터 get 방식이오면 $_GET post 방식으로 오면 $_POST 
+
+최종 
+<?php
+file_put_contents('data/" .$_POST['title'], $_POST['description']);

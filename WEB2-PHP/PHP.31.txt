@@ -1,0 +1,135 @@
+보안 XSS 
+
+cross site scripting 이라는 것인ㄷ 이것을 xss 라고 줄여부름 
+
+이것은뭐냐면 웹사이트에다 script 태그를 주입시ㅣㅋ는것인데 
+
+어떻게하냐 업데이트에다가 script 태그를 넣으면 되는데 script라는게 뭐냐면
+
+자바스크립트라는 컴퓨터 언어를 웹브라우저에서 실행한 코드이다.
+
+그리고 
+
+사이트에서 update 누르고 
+
+내용칸에
+XSS<sciprt>
+ alert('babo');
+</script>
+
+하고 제출하면 babo라고 경고창이 뜸 
+
+그리고 좀더  중간에 자바스크립트로 현제  사용자를 어떤 특정한 웹페이지로 보낼수있는데
+
+alret지우고 location.href="주소"</script>하면 해당 목록을 클릭할때 사이트로 이동시킬수있따.
+
+한번이동하면 다시 목록으로 갈수는 없다 이유는 javascript가 실행되었기떄문이다.
+
+이런것을 크로스사이트 스크립팅 이라고 하고 지금 우리가 본것은 비교적 악성이아닌것이고
+
+자바스크립트르 고도로 사용하면 심각한 정보를 숨길수있다
+
+로그인을 대신한다던가 글을 삭제 한다던가  어떤 비밀스러운 정보를 유출할수있기때문에
+
+매우위험한 보안적도전이라 할수있다.
+
+그럼 어떻게 하느냐 
+
+php가 갖고있는 함수중에 이크로사이트 스크립팅을 방지하는 것이 두가지 
+
+먼저 XSS.php 생성 
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>XSS</title>
+    </head>
+    <body>
+     <h1>Cross site scripting</h1>
+     <?php
+     echo '<script>alert("babo");</script>';
+     ?>
+</body>
+</html>
+
+이렇게 하면 아까본거라 똑같이 된다 babo 경고창뜸
+
+그럼이걸어떻게 막을수있냐면 php가 갖고있는 함수 중에
+
+ echo htmlspecialchars('<script>alert("babo");</script>'); 이렇게하면 다시접속할때 
+
+Cross site scripting
+<script>alert("babo");</script> 이렇게 화면이 뜹니다.
+
+그냥 스크립트가 출력되버림 
+
+원본보기하면 
+<이왼쪽 억세는 html에서 tag 
+근데 그거를 왼쪽으로바라보는 꺽세를 html에서 표현하고싶을때사용하는 NTT라고하는데 
+그특수한 약속으로 바꿔버림 그럼 <코드가 그대로 화면에 출력 
+
+그럼 이 javascript 는 더이상동작하지 않기떄매 안전 그렇다면 어떻게할까 
+&lt;script&gt;alert(&quot;babo&quot;);&lt;/script&gt;<
+
+print.php로 가서 사용자가 입력한 정보가 출력되는 부분을
+
+echo $_GET['id'];  이부분을 모두 
+
+ echo htmlspecialchars($_GET['id']); 이렇게 바꿔줌 
+
+href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+
+$list[$i] 여기 이부분 2개도 불신하야 하는데 
+
+ $list = scandir('./data'); 밑에
+
+$title = htmlspecialchars($list[$i]);이렇게 생성후 
+
+href=\"index.php?id=$list[$i]\">$list[$i]</a></li>\n";
+
+다시 $list 부분을 $title 로 바꿈 
+
+두번째 부분도  echo htmlspecialchars(file_get_contents("data/".$_GET['id']));이렇게 변경 
+
+최종
+
+<?php
+function print_title(){
+  if(isset($_GET['id'])){
+    echo htmlspecialchars($_GET['id']);
+  } else {
+    echo "Welcome";
+  }
+}
+function print_description(){
+   if(isset($_GET['id'])){
+     echo htmlspecialchars(file_get_contents("data/".$_GET['id']));
+   } else {
+     echo "Hello. PHP";
+   }
+}
+function print_list(){
+  $list = scandir('./data');
+  $i = 0;
+  while($i < count($list)){
+    $title = htmlspecialchars($list[$i]);  
+    if($list[$i] !== '.') {
+      if($list[$i] !== '..') {
+    echo "<li><a
+    href=\"index.php?id=$title\">$title</a></li>\n";
+     }
+    }
+    $i = $i +1;
+    }
+  }
+?>
+
+이렇게하면은 cross 사이트로 갔을 때 
+XSS <script> location.href="https://www.naver.com" </script> 이동하지않고 javscript그대로 뜨면 
+
+우리가 막았다 할수있다.. 자그런데 본문을 htmlscpacilchars 하면 이미지태그 줄바꿈태그이라던지 몇몇 을 할수없다
+
+그럼 php에서 제공하는 strip tag라는것이 있다 이걸이용하면 tag를 다날려버림 
+
+web2-php-27.2 보안 파일 경로보호 부터보면된다...

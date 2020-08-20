@@ -1,0 +1,18 @@
+  <?php
+     $list = scandir('data');
+     $i = 0;
+     while($i<count($list)){
+       if($list[$i] != '.'){
+         if($list[$i] != '..'){
+           ?>
+           <li><a href="index.php?id=<?=$list[$i]?>"><?=$list[$i]?></a></li>
+           <?php
+         }
+       }
+       $i = $i + 1;
+     }
+     ?>
+
+코드 입력하면 코드 만만들어도 알아서 index.php에 추가해줌 
+
+15.반복문의 형식

@@ -1,0 +1,18 @@
+19.2 -함수의 형식 2/3 
+
+<?php 
+function sum($left, $right) { left right 변수를 parameter 라고함 
+  print($left+right);
+  print("<br>");
+ }
+ sum(2,4); 더함 2.4f라고 하는 입력값을 argument 라고함
+ sum(4,6); 더함 
+ ?>
+
+결과 
+
+parameter & Argument 
+
+6 
+
+10 

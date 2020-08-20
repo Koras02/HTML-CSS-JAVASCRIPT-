@@ -1,0 +1,32 @@
+    <h1>function</h1>
+    <?php
+     $str ="It is a long established fact that a reader will be distracted by the readable
+     content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+     as opposed to using 'Content here, content here";
+     echo $str;
+    ?>
+    <h2>strlen()</h2>
+    <?php
+    echo strlen($str;) :
+     ?>
+  </body>
+</html>
+
+실행결과
+
+strlen()
+
+124 개 문자수를 표현한다.
+
+<h2>nl2br</br>
+   <?php
+   echo nl2br($str);
+    ?>
+
+줄바꿈을 해도 줄발꿈이 되지않음 
+
+nl2br을 통해서만 줄바꿈이된다.
+
+
+
+

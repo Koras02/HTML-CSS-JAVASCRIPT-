@@ -1,0 +1,99 @@
+PHP-24.글수정 
+
+index.php 파일에 
+
+a href="create.php">create 밑에
+
+<a href="update.php>update</a> 
+
+업데이트 기능은 언제 활성해야될까 가장 홈에 있을 떄는 없데이트가x 어떤 특정글을 선택했을때 나와야 될때
+
+create.php update.php 중간에 
+
+<? php if(isset($_GET['id'])) { ?>
+updat.php 밑에
+<?php }?> 이렇게 하면은 if문과 중괄호 사이에는 id값이 set해야지 출력 
+
+웹으로 갔을때 는 update 가없고 
+
+다른 항목을 누르면 update 가있는 현상을 만들수있다.
+
+수정하려면 수정할내용을 알아야되는데....
+
+update 는 현재 우리가 보고있는 페ㅔ이지에대한 id값을 물고 들어가야됨 
+
+그래서 a href="update.php 뒤에?id=<?php echo $_GET['id'];  ?>" update</a>
+
+하고 해당문서에 update를 누르면 해당화면은 나오지 않지만 id값을 물고 간것을 볼수있다.
+
+한가지 팁 echo 써야할경우 php echo 지우고 =로하면 똑같은 의미를 갔게됨.
+
+이제 업데이트 를 만들어보자 
+
+index.php 를 duplicate 해고 리로드 해당내용을 바꿔야되는데 create.php에있는 form 태그를 일단카피
+
+update로와서 제일 밑에다가 일단 붙여넣기하면 수정 박스가 나오는데  수정을 할려면 수정하고자하느 
+
+내용이 폼에 채워져있어야하는데 print_title();을 title에있는 form에넣으면 되는데 그게 value 라는 속성인데
+
+placeholder 뒤에 value="<?php print_title(); ?>"> 제목에 내용이 잘들어옴 
+
+그리고 밑에 description 부분 holder 뒤에도 ><?php print_description();?> 하면 내용도 카피 된다 
+
+여기서 제출하면 추가할때는 create 와 process로했는데 이번에는 update underba process.php로 해보도록하자 
+
+만약 사용자가 html 이란 이름을 html2로 했다면 우리가 어떻게 해야될까 
+
+data 디렉에 html이란 파일 명을 html2로하고 바꾸고 여기있는 내용을 기록하면되는데 
+
+<?php
+ rename('data/'.$_POST['title']);
+?> 
+
+하면 될주알았는데 방금수정한 title 제목은 새로운 이름이지 이전 이름이 아니기 때문에 
+
+이타이틀을 첫벌째인자가 아니라 두번쨰 인자로  들어가야된 새로운이름이 두번째인자라서 
+
+이전이름은 첫번쨰 인자로 봐야하기 때문 
+
+서버쪽으로 데이터를 작성할때 title이라느 네임으로 사용자가 수정했을 값을 전달하니까 title 이라는 값은 
+
+수정될 파일명이고 이전파일명에대한 정보를 보내주면되는데 
+
+<input type="hidden" name="old_title" value="">
+
+하면 아무변화가없는데 지금 추가한 input hidden 인데 사용자ㅔ게는 노출되지않으면서 제출버튼을 누럿을때 
+
+액션이 가리키는 애플리케이션으로  어떠한 데이터를 전송하고 싶다면 쓸만한 ui hidden 폼 
+
+여기서 oldtitle 옆에 value="<?=$_GET['id']?">하고
+
+submit 하면 update_proceese 로가고  
+
+여기서 title 은 새로운이름 old_title은 이전이름이 되면되는데 
+
+<?php
+rename('data/'.$_POST['old_title'], 'data/'.$POST['title']); 
+
+하면 파일 수정이 가능하다 !! 수정하고 파일명이 바뀜.
+
+그후 수정된 파일에 description 값을 ㅣㄱ록하는법은 
+
+밑에 file_put_contents('data/'.$_POST['title'], 'data/'.$_POST['description']); 추가 
+ 
+하면 업데이트 하고 제목을 바꾸면 파일명도 바로 바뀌게된다.
+
+최종 
+
+?php
+rename('data/'.$_POST['old_title'], 'data/'.$_POST['title']);
+file_put_contents('data/'.$_POST['title'], '.$_POST['description']);
+?>
+
+이렇게 하면된다 ㅜㅜ 
+
+create_process처럼 location 정보를 업데이트 프로세스도 똑같이 header부분 복사해주면 됨 
+
+그러면 update 하고 제목을 바꿀수있다!!!!으아!!!
+
+25.글삭제부터 보자 이거야 !!!

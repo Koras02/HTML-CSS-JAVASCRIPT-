@@ -1,0 +1,57 @@
+반복문과 조건문의 활용 2
+
+<?php 
+$list = scandir('./data');
+echo "<li>$list[0]</li>/(반대)n"
+echo "<li>$list[1]</li>/(반대)n"
+echo "<li>$list[2]</li>/(반대)n" css
+echo "<li>$list[3]</li>/(반대)n" HTML
+echo "<li>$list[4]</li>/(반대)n" Javascript
+
+결과 
+
+
+<li> CSS</li>
+<li> HTML</li>
+<li> JavaScript</li>
+
+
+$i = 0; 
+while($i < 6) {
+  echo "<li>$list[0]</li>/n";
+    $i = $i + i;
+  }
+
+/* 
+echo부분
+/*
+
+결과 
+
+WEB
+.
+..
+CSS
+HTML
+JavaScript
+MYSQL
+HTML
+
+HTML is Lorem Ipsum is simply dummy text of the printing and 
+typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+ type specimen book. It has survived not only five centuries, but also the leap into electronic
+ typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing 
+software like Aldus PageMaker including versions of Lorem Ipsum
+
+  $i = 0;
+         while($i < count($list)){
+           echo "<li>$list[$i]</li>\n";
+           $i = $i +1;
+         } 
+
+파일의 숫자만큼 목록이 생기는 코드다 !!!
+
+<li><a href=/(반대)"index.php?id=$list[$i]/">$list[$i]</li>|n";
+각각의 링크 

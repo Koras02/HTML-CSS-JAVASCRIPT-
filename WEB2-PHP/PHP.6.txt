@@ -1,0 +1,33 @@
+PHP와 문자열 
+
+string 문자열 
+
+   <h1>String & String Operator</h1>
+<?php
+echo "Hellow \"W\"orld";
+?>
+
+실행결과
+
+String & String 
+
+Operator
+
+Hellow "W"orld
+
+   <h2>concatenation operator</h2>
+   <?php
+    echo "Hello"."World";
+    ?>
+
+실행결과
+
+concatenation Operator
+
+HelloWorld                 
+
+<?php
+echo strlen("Hello Wolrd");
+?> 
+문자열이 몇개의 문자로 이어저있는지 알려줌 
+

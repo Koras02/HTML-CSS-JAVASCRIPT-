@@ -1,0 +1,41 @@
+숫자를 다루는 방법 
+
+integer 정수
+
+float 부동수
+
+자연수 자연에서 만들 수 [-2.-1.0.1.2.....]
+
+?php
+echo 1; 
+?>
+
+실행결과;1  
+
+php 코드는 최종적으로 사라진다
+
+<!Doctype html>
+<html>
+<body>
+<?php
+print(1)
+?>
+</body>
+</html>
+
+print 안에 어떤값을주면 php는 html로 출력
+
+<!Doctype html>
+<html>
+<body>
+<?php
+echo 1+1 
+?>
+</body>
+</html>
+
+실행결과
+
+2
+
+1+1은 숫자2에대한 표현식 
